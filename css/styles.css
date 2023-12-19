@@ -62,15 +62,29 @@ h1 {
 .box--one {
   background-color: lightblue;
 
-  width: 100px;
-  height: 100px;
+  width: 6rem;
+  height: 6rem;
 }
 
+/*I want my width to change to 200px when the viewport is 
+wider than 599px, and to 400px when the viewport is wider than 1199px.*/
 .box--two {
   background-color: lightgreen;
 
   width: 100px;
   height: 100px;
+}
+
+@media screen and (min-width: 599px) {
+  .box--two {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .box--two {
+    width: 400px;
+  }
 }
 
 .box--three {
@@ -80,11 +94,30 @@ h1 {
   height: 250px;
 }
 
+/*I want to be flat in landscape mode.*/
+
+@media (orientation: landscape) {
+  .box--three {
+    background-color: lightpink;
+
+    height: 50px;
+    width: 250px;
+  }
+}
+
 .box--four {
   background-color: lightgray;
 
   width: 100px;
   height: 100px;
+}
+@media (prefers-color-scheme: dark) {
+  .box--four {
+    background-color: black;
+
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .box--five {
